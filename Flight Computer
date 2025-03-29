@@ -1,0 +1,24 @@
+#define GREEN_LED 2
+#define IGNITION_COIL 5
+//#define BUZZER 5 //commented it out cause its too noisy for our house. 
+
+void setup() {
+    pinMode(GREEN_LED, OUTPUT);
+    pinMode(IGNITION_COIL, OUTPUT);
+    //pinMode(BUZZER, OUTPUT);
+    
+    digitalWrite(GREEN_LED, LOW);
+    digitalWrite(IGNITION_COIL, LOW);
+    //digitalWrite(BUZZER, HIGH); 
+    
+    delay(5000); // Wait for 5 seconds after power-up
+  
+    digitalWrite(GREEN_LED, HIGH);  // Turn on Green LED
+    digitalWrite(IGNITION_COIL, HIGH);  // Activate ignition coil
+    delay(3000);  // Keep ignition coil active for 2 seconds
+    digitalWrite(IGNITION_COIL, LOW);  // Turn off ignition coil
+}
+
+void loop() {
+    // Green LED stays on, no further operations
+}
